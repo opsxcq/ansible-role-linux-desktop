@@ -13,7 +13,7 @@ like it when you finish running it.
  - `gpg_hash` - The respective hash of your GPG key.
  - `git_name` - The name that you want to be displayed in your commits
  - `git_email` - Your email
- - `extra_git_repos` - A list of `{repo:... location:...}` of additional git
+ - `extra_git_repos` - A list of `{repo:... dest:...}` of additional git
    repositories to clone.
  
 # Notes
