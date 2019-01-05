@@ -1,0 +1,141 @@
+#### Applications
+
+## launch terminal
+super + Return
+  ${HOME}/.bin/termite	
+## launch alternative terminal
+super + shift + Return
+	${HOME}/.bin/termite --name=float
+
+## launch Nautilus
+super + shift + f
+	nautilus
+	
+## launch Firefox
+super + shift + w
+	firefox
+	
+## launch Emacs
+super + shift + g
+	emacsclient -c
+
+
+#### Meta
+
+super + shift + d
+	rofi -modi run,drun,window,playlist:${HOME}/.bin/rofi-playlist -lines 20 -padding 18 -width 20 -location 0 -show window -sidebar-mode -columns 1 -font "Tamsyn 12"
+super + d
+	rofi -modi run,drun,window,playlist:${HOME}/.bin/rofi-playlist -lines 20 -padding 18 -width 20 -location 0 -show drun -sidebar-mode -columns 1 -font "Tamsyn 12"
+super + m
+	rofi -modi run,drun,window,playlist:${HOME}.bin/rofi-playlist -lines 20 -padding 18 -width 20 -location 0 -show playlist -sidebar-mode -columns 1 -font "Tamsyn 12"
+
+## Reload
+#super + s
+#	pkill -USR1 -x sxhkd
+
+## Lockscreen
+super + q
+        ~/.bin/lock
+
+
+#### Multimedia
+
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	amixer {sset Master '5%+',sset Master '5%-',set Master toggle}
+
+Print
+	scrot 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~/Pictures/ ; feh ~/Pictures/$f'
+
+Print + shift
+	scrot -s 'scrot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f ~/Pictures/ ; feh ~/Pictures/$f'
+
+
+#### Window manager
+
+## quit bspwm normally
+super + control + Escape
+	bspc quit
+
+## close app
+super + Escape
+	bspc node -c
+
+## kill app
+super + shift + Escape
+	bspc node -k
+
+
+#### Layout
+
+## Use all area (not full screen)
+super + f
+	bspc desktop -l next
+	
+## Split window V=vertical C=horizontal
+super + {c,v}
+	bspc node -p {east,south}
+	
+## Aspect ratio
+super + ctrl + {1-9}
+	bspc node -o 0.{1-9}
+
+## Cancel (when creating new windows)
+super + r
+	bspc node -p cancel
+
+## Tiled and peusdo tiled
+super + p
+    bspc node -t "~"{pseudo_tiled,tiled}
+
+## Float and tilled
+super + space
+    bspc node -t "~"{floating,tiled}
+    
+## Set tiled
+super + t
+	bspc node -t tiled
+
+## Move window
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+
+#### Focus
+
+## Next
+alt + Tab
+	bspc node -f next.local
+
+## Previous
+alt + shift + Tab
+	bspc node -f prev.local
+
+## Previous/next desktop
+ctrl + alt + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+## Send window to another desktop
+super + {_,shift + }{1-9}
+	bspc {desktop -f,node -d} '^{1-9}'
+	
+## jump to another workspace
+super + {1-8}
+	bspc desktop --focus^{1-8}
+
+## expanding windows
+super + ctrl + {Left,Right,Up,Down}
+	bspc node -z {left -5 0,right 5 0,top 0 -5,bottom 0 5}
+	
+## shrinking windows
+super + alt + {Left,Right,Up,Down}
+	bspc node -z {left 5 0,right -5 0,top 0 5,bottom 0 -5}
+	
+## move floating windows
+ctrl + shift + {Left,Down,Up,Right}
+	bspc node -v {-10 0,0 10,0 -10,10 0}

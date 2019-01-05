@@ -1,0 +1,12 @@
+# Terminal tools
+
+- name: Linux Desktop | Install terminal tools
+  apt:
+    state: present
+    name:
+      - tmux
+      - htop
+      - iotop
+      - slurm
+      - w3m
+      - w3m-img

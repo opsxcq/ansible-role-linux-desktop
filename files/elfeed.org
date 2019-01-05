@@ -1,0 +1,14 @@
+* News :elfeed:
+** Computing :computing:
+** Economy :economy:
+** Linux :linux:
+** Infosec :infosec:
+*** https://rss.packetstormsecurity.com/files/
+*** https://rss.packetstormsecurity.com/news/
+* Blogs                                                              :elfeed:
+** daily                                                        :daily:
+*** http://xkcd.com/rss.xml
+** Security :infosec:
+*** https://sensepost.com/rss.xml
+*** https://blog.malwarebytes.com/feed/
+*** https://hshrzd.wordpress.com/feed/

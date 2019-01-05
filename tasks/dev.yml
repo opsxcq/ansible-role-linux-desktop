@@ -1,0 +1,56 @@
+# Development environment setup
+
+- name: Linux Desktop | Dev | Install the desktop environment for programming
+  apt:
+    state: present
+    name: 
+      - git
+      - tig
+      - openjdk-8-jdk
+      - maven
+      - python3
+      - python3-pip
+      - zeal
+
+- name: Linux Desktop | Dev | Install SpacEmacs
+  git:
+    repo: https://github.com/syl20bnr/spacemacs
+    dest: ~/.emacs.d/
+    update: yes
+    clone: no
+    accept_hostkey: yes
+
+- name: Linux Desktop | Dev | Configure git
+  block:
+    - git_config:
+        name: core.excludefiles
+        scope: global
+        value: "~/.global-gitignore"
+    - git_config:
+        name: pack.windowMemory
+        scope: global
+        value: "100m"
+    - git_config:
+        name: pack.packetSizeLimit
+        scope: global
+        value: "512m"
+    - git_config:
+        name: pack.threads
+        scope: global
+        value: "1"
+    - git_config:
+        name: rebase.autosquash
+        scope: global
+        value: "true"
+
+- name: Linux Desktop | Dev | Configure git to use GPG
+  block:
+    - git_config:
+        name: commit.gpgsign
+        scope: global
+        value: "true"
+    - git_config:
+        name: user.signingkey
+        scope: global
+        value: "{{ gpg_hash }}"
+  when: gpg is defined

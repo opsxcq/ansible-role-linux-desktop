@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Electrum Regtest Network
+Comment=Electrum Bitcoin Wallet
+Exec=/usr/local/bin/electrum --regtest
+Terminal=false
+Categories=Finance
+StartupWMClass=Electrum

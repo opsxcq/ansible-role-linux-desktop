@@ -1,0 +1,105 @@
+# Install the desktop environment
+
+- name: Linux Desktop | Interface | Install desktop tools
+  apt:
+    state: present
+    name:
+      - bspwm
+      - sxhkd
+      - feh
+      - compton
+      - rofi
+      - i3lock
+      - fonts-font-awesome
+      - fontconfig
+
+- name: Linux Desktop | Interface | Install Adapta GTK theme dependencies
+  apt:
+    state: present
+    name:
+      - lxappearance
+      - fonts-roboto
+      - fonts-noto-cjk
+      - gtk2-engines-pixbuf
+
+- name: Linux Desktop | Interface | Create directories
+  block:
+    - name: Linux Desktop | Interface | Checking folders
+      stat:
+       path: "{{item}}"
+      register: folder_stats
+      with_items:
+        - "/home/{{ username }}/.local/share/application"
+        - "/home/{{ username }}/.config/sxhkd"
+        - "/home/{{ username }}/.config/bspwm"
+        - "/home/{{ username }}/.config/polybar"
+        - "/home/{{ username }}/.bin"
+    - name: Linux Desktop | Interface | Creating folders
+      file:
+       path: "{{item.item}}"
+       state: directory
+       mode: 0700
+       group: "{{ username }}"
+       owner: "{{ username }}"
+      when: item.stat.exists == false
+      with_items:
+      - "{{folder_stats.results}}"
+
+- name: Linux Desktop | Interface | Copy launcher files
+  copy:
+    src: "{{ item }}"
+    dest: "/home/{{ username }}/.local/share/application"
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"
+  with_fileglob:
+    - files/launcher/*
+
+- name: Linux Desktop | Interface | Copy compton configuration
+  copy:
+    src: "compton.conf"
+    dest: "/home/{{ username }}/.config/compton.conf"
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"
+
+- name: Linux Desktop | Interface | Copy compton configuration
+  copy:
+    src: "sxhkdrc"
+    dest: "/home/{{ username }}/.config/sxhkd/sxhkdrc"
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"
+
+
+- name: Linux Desktop | Interface | Copy bspwm configuration
+  copy:
+    src: "bspwmrc"
+    dest: "/home/{{ username }}/.config/bspwm/bspwmrc"
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"
+
+- name: Linux Desktop | Interface | Copy polybar configuration
+  copy:
+    src: "polybar.config"
+    dest: "/home/{{ username }}/.config/polybar/config"
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"
+
+- name: Linux Desktop | Interface | Copy elfeed configuration
+  copy:
+    src: "elfeed.org"
+    dest: "/home/{{ username }}/elfeed.org"
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"
+
+- name: Linux Desktop | Interface | Install lockscreen script
+  copy:
+    src: "lock"
+    dest: "/home/{{ username }}/.bin/lock"
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"

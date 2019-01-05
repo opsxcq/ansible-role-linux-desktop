@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Zotero
+Exec=~.bin/zotero/zotero-bin -app application.ini
+Icon=zotero.ico
+Type=Application
+Terminal=false
+Categories=Office;
+MimeType=text/plain

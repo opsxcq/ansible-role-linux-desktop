@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Electrum Testnet Network
+Comment=Electrum Bitcoin Wallet
+Exec=/usr/local/bin/electrum --testnet
+Terminal=false
+Categories=Finance
+StartupWMClass=Electrum

@@ -1,76 +1,14 @@
 ---
 # Linux desktop main task
 
-- name: Linux Desktop | Install terminal tools
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - tmux
-    - w3m
-    - w3m-img
-    - pass
+- include: terminal.yml
 
-- name: Linux Desktop | Install desktop tools
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - bspwm
-    - sxhkd
-    - feh
-    - mpv
-    - compton
-    - rofi
-    - i3lock
-    - fonts-font-awesome
+- include: security.yml
 
-- name: Linux Desktop | Install Adapta GTK theme dependencies
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - lxappearance
-    - fonts-roboto
-    - fonts-noto-cjk
-    - gtk2-engines-pixbuf
+- include: desktop.yml
 
-- name: Linux Desktop | Install media player features
-  apt:
-    name: "{{item }}"
-    state: present
-  with_items:
-    - mpc
-    - moc
-    - ncmpcpp
+- include: media.yml
 
-- name: Linux Desktop | Install text processing tools
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - vim
-    - emacs
-    - aspell-pt-br
-    - texlive-lang-portuguese
-    - fontconfig
-    - texlive-fonts-extra
-    - texlive-latex-extra
-    - texlive-math-extra
-    - latex-xcolor
-    - texlive-xetex
-    - zotero-standalone
-    - mupdf
-    - zathura
-    - dvipng
+- include: text.yml
 
-- name: Linux Desktop | Install the desktop environment for programming
-  apt:
-    name: "{{ item }}"
-    state: present
-  with_items:
-    - git
-    - openjdk-8-jdk
-    - maven
-    - python3
-    - python3-pip
+- include: dev.yml

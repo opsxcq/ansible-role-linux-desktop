@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ -z "$1" ]
+then
+  mpc lsplaylists
+else
+  mpc clear >/dev/null
+  mpc load $1 >/dev/null
+  mpc play >/dev/null
+fi

@@ -1,0 +1,9 @@
+# Security tools
+
+- name: Linux Desktop | Install security tools
+  apt:
+    state: present
+    name:
+      - pass
+      - gnupg
+      - nmap

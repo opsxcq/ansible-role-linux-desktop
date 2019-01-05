@@ -1,0 +1,9 @@
+# Terminal tools
+
+- name: Linux Desktop | Install terminal tools
+  apt:
+    state: present
+    name:
+      - tmux
+      - w3m
+      - w3m-img

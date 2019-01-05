@@ -1,0 +1,34 @@
+# Media related configs
+
+- name: Linux Desktop | Media | Install media player features
+  apt:
+    state: present
+    name:
+      - mpv
+      - mpc
+      - moc
+      - ncmpcpp
+
+- name: Linux Desktop | Media | Install ncmpcpp config
+  file:
+    path: "/home/{{ username }}/.ncmpcpp/"
+    state: directory
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"
+
+- name: Linux Desktop | Media | Install ncmpcpp config
+  copy:
+    src: "ncmpcpp.config"
+    dest: "/home/{{ username }}/.ncmpcpp/config"
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"
+
+- name: Linux Desktop | Media | Install rofi playlist script
+  copy:
+    src: "rofi-playlist"
+    dest: "/home/{{ username }}/.bin/rofi-playlist"
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"

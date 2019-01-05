@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Electrum Main Network
+Comment=Electrum Bitcoin Wallet
+Exec=/usr/local/bin/electrum
+Terminal=false
+Categories=Finance
+StartupWMClass=Electrum

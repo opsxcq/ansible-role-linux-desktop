@@ -1,0 +1,20 @@
+# Text processing tools
+
+- name: Linux Desktop | Install text processing tools
+  apt:
+    state: present
+    name:
+      - vim
+      - emacs
+      - aspell-pt-br
+      - texlive-lang-portuguese
+      - texlive-fonts-extra
+      - texlive-latex-extra
+      - texlive-math-extra
+      - latex-xcolor
+      - texlive-xetex
+      # Removed because the current version is crashing on Debian 9.6
+      #- zotero-standalone
+      - mupdf
+      - zathura
+      - dvipng
