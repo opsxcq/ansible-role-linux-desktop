@@ -9,3 +9,9 @@
     accept_hostkey: yes
   with_items: "{{ extra_git_repos }}"
   when: extra_git_repos is defined
+
+
+- name: Linux Desktop | Extra git repos permissions
+  file: path="{{ item.dest }}" owner="{{ username }}" group="{{ username }}" mode=0700 state=directory recurse=yes
+  with_items: "{{ extra_git_repos }}"
+  when: extra_git_repos is defined
