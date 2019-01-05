@@ -1,6 +1,6 @@
 # Terminal tools
 
-- name: Linux Desktop | Install terminal tools
+- name: Linux Desktop | Terminal | Install tools
   apt:
     state: present
     name:
@@ -10,3 +10,12 @@
       - slurm
       - w3m
       - w3m-img
+
+
+- name: Linux Desktop | Terminal | Copy tmux configuration
+  copy:
+    src: "tmux.conf"
+    DEST: "/home/{{ username }}/.bin/rofi-playlist"
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"
