@@ -27,6 +27,7 @@ Or add to your `requirements.yml`
 - Save your wallpaper to `${HOME}/.wallpaper.jpg`
 - You need to recompile termite and put it in `${HOME}/.bin`
 - You need to recompile polybar and put it somewhere in the `$PATH`.
+- You must run as **root**
 
 ## Requirements
 
