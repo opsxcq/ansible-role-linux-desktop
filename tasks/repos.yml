@@ -1,0 +1,11 @@
+# Extra git repos
+
+- name: Linux Desktop | Extra git repos
+  git:
+    repo: "{{ item.repo }}"
+    dest: "{{ item.dest }}"
+    update: yes
+    clone: yes
+    accept_hostkey: yes
+  with_items: extra_git_repos
+  when: extra_git_repos is defined

@@ -2,13 +2,9 @@
 # Linux desktop main task
 
 - include: terminal.yml
-
 - include: security.yml
-
 - include: desktop.yml
-
 - include: media.yml
-
 - include: text.yml
-
 - include: dev.yml
+- include: repos.yml
