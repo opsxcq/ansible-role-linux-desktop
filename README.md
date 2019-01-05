@@ -8,8 +8,6 @@ like it when you finish running it.
 # Variables
 
  - `username` - Username that will have the configuration files installed.
- - `gpg_key` - If set, install this key as your GPG key, also it configures your
-   git to use it.
  - `gpg_hash` - The respective hash of your GPG key.
  - `git_name` - The name that you want to be displayed in your commits
  - `git_email` - Your email
@@ -30,7 +28,12 @@ This role is meant to be run in a **Debian Linux** system.
 
 
 ```yaml
-    - hosts: desktops
-      roles:
-         - opsxcq.linux-desktop
+- name: Apply desktop configuration
+  hosts: desktop
+  vars:
+    username: "opsxcq"
+    git_email: "opsxcq@strm.sh"
+    gpg_hash: "66ED4A9A4D70D36FE48196419AD730FE9CDE5661"
+  roles:
+    - opsxcq.linux-desktop
 ```
