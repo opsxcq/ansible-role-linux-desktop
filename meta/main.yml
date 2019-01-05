@@ -1,5 +1,6 @@
 galaxy_info:
   author: OPSXCQ
+  role_name: linux-desktop
   description: Linux desktop configuration
   company: STRM
   license: GPLv3
