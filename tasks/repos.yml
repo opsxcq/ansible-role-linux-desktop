@@ -7,5 +7,5 @@
     update: yes
     clone: yes
     accept_hostkey: yes
-  with_items: extra_git_repos
+  with_items: "{{ extra_git_repos }}"
   when: extra_git_repos is defined
