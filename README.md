@@ -1,6 +1,7 @@
 # Linux Desktop container role
 
-Creates a linux development environment with the tools that I use.
+Creates a linux development environment with the tools that I use. It will look
+like it when you finish running it.
 
 # Variables
 
@@ -16,6 +17,8 @@ Creates a linux development environment with the tools that I use.
 # Notes
 
 - Save your wallpaper to `${HOME}/.wallpaper.jpg`
+- You need to recompile termite and put it in `${HOME}/.bin`
+- You need to recompile polybar and put it somewhere in the `$PATH`.
 
 ## Requirements
 

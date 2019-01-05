@@ -33,6 +33,7 @@
         - "/home/{{ username }}/.config/sxhkd"
         - "/home/{{ username }}/.config/bspwm"
         - "/home/{{ username }}/.config/polybar"
+        - "/home/{{ username }}/.config/gtk-3.0"
         - "/home/{{ username }}/.bin"
     - name: Linux Desktop | Interface | Creating folders
       file:
@@ -100,6 +101,22 @@
   copy:
     src: "lock"
     dest: "/home/{{ username }}/.bin/lock"
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"
+
+- name: Linux Desktop | Interface | Install GTK3 customizations
+  copy:
+    src: "gtk.css"
+    dest: "/home/{{ username }}/.config/gtk-3.0/gtk.css"
+    mode: 0700
+    group: "{{ username }}"
+    owner: "{{ username }}"
+
+- name: Linux Desktop | Interface | Install termine configuration
+  copy:
+    src: "termite.config"
+    dest: "/home/{{ username }}/.config/termite/config"
     mode: 0700
     group: "{{ username }}"
     owner: "{{ username }}"

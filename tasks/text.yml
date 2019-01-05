@@ -15,6 +15,7 @@
       - texlive-xetex
       # Removed because the current version is crashing on Debian 9.6
       #- zotero-standalone
+      - calibre
       - mupdf
       - zathura
       - dvipng
