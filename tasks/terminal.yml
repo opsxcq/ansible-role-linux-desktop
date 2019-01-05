@@ -15,7 +15,7 @@
 - name: Linux Desktop | Terminal | Copy tmux configuration
   copy:
     src: "tmux.conf"
-    DEST: "/home/{{ username }}/.bin/rofi-playlist"
+    dest: "/home/{{ username }}/.tmux.conf"
     mode: 0700
     group: "{{ username }}"
     owner: "{{ username }}"
