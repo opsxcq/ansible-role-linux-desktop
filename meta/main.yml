@@ -1,6 +1,6 @@
 galaxy_info:
   author: OPSXCQ
-  role_name: linux-desktop
+  role_name: linux_desktop
   description: Linux desktop configuration
   company: STRM
   license: GPLv3
@@ -8,5 +8,6 @@ galaxy_info:
   platforms:
    - name: Debian
      versions:
-       - 9
+       - jessie
+       - stretch
   galaxy_tags: [linux, desktop]

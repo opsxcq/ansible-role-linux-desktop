@@ -5,6 +5,14 @@ like it when you finish running it.
 
 ![desktop](desktop.png)
 
+# Install
+
+You can install directly with:
+
+`ansible-galaxy install opsxcq.linux_desktop`
+
+Or add to your `requirements.yml`
+
 # Variables
 
  - `username` - Username that will have the configuration files installed.
