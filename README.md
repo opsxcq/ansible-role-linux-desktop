@@ -3,6 +3,8 @@
 Creates a linux development environment with the tools that I use. It will look
 like it when you finish running it.
 
+![desktop.png]
+
 # Variables
 
  - `username` - Username that will have the configuration files installed.
