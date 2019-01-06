@@ -26,7 +26,7 @@
 - name: Linux Desktop | Dev | Install the desktop environment for programming
   apt:
     state: present
-    name: 
+    name:
       - yarn
       - git
       - tig
@@ -47,34 +47,41 @@
 
 - name: Linux Desktop | Dev | Configure git
   block:
-    - git_config:
+    - name: Configuring a global git ignore
+      git_config:
         name: core.excludefiles
         scope: global
         value: "~/.global-gitignore"
-    - git_config:
+    - name: Configuring window memory
+      git_config:
         name: pack.windowMemory
         scope: global
         value: "100m"
-    - git_config:
+    - name: Configuring packet size limit
+      git_config:
         name: pack.packetSizeLimit
         scope: global
         value: "512m"
-    - git_config:
+    - name: Configuring threads
+      git_config:
         name: pack.threads
         scope: global
         value: "1"
-    - git_config:
+    - name: Configuring rebase autosquash
+      git_config:
         name: rebase.autosquash
         scope: global
         value: "true"
 
 - name: Linux Desktop | Dev | Configure git to use GPG
   block:
-    - git_config:
+    - name: Linux Desktop | Dev | Configure git to sign with GPG
+      git_config:
         name: commit.gpgsign
         scope: global
         value: "true"
-    - git_config:
+    - name: Linux Desktop | Dev | Configure git sign key
+      git_config:
         name: user.signingkey
         scope: global
         value: "{{ gpg_hash }}"

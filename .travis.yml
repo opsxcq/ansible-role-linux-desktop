@@ -23,7 +23,7 @@ install:
   - ansible --version
 
 script:
-  - ansible-playbook -i test/example.yml --syntax-check
+  - ansible-lint -x 401 .
 
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
