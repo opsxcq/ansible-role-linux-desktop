@@ -1,15 +1,40 @@
 # Development environment setup
 
+- name: Linux Desktop | Dev | Install Yarn key
+  apt_key:
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+    state: present
+
+- name: Linux Desktop | Dev | Install Yarn repository
+  file:
+    path: /etc/apt/sources.list.d/yarn.list
+    owner: root
+    mode: 0644
+    state: touch
+
+- name: Linux Desktop | Dev | Install Yarn repository
+  lineinfile:
+    dest: /etc/apt/sources.list.d/yarn.list
+    regexp: "deb http://dl.yarnpkg.com/debian/ stable main"
+    line: "deb http://dl.yarnpkg.com/debian/ stable main"
+    state: present
+
+- name: Linux Desktop | Dev | Update apt cache
+  apt:
+    update_cache: yes
+
 - name: Linux Desktop | Dev | Install the desktop environment for programming
   apt:
     state: present
     name: 
+      - yarn
       - git
       - tig
       - openjdk-8-jdk
       - maven
       - python3
       - python3-pip
+      - bpython3
       - zeal
 
 - name: Linux Desktop | Dev | Install SpacEmacs

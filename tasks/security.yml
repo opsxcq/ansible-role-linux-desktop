@@ -7,3 +7,7 @@
       - pass
       - gnupg
       - nmap
+      - tor
+      - proxychains
+      - mtr
+      - hydra

@@ -10,6 +10,13 @@
       - slurm
       - w3m
       - w3m-img
+      - jq
+      - csvtool
+      - transmission-remote-cli
+      - unrar-free
+      - unzip
+      - curl
+      - wget
 
 
 - name: Linux Desktop | Terminal | Copy tmux configuration
