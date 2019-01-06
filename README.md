@@ -45,5 +45,5 @@ This role is meant to be run in a **Debian Linux** system.
     git_email: "opsxcq@strm.sh"
     gpg_hash: "66ED4A9A4D70D36FE48196419AD730FE9CDE5661"
   roles:
-    - opsxcq.linux-desktop
+    - opsxcq.linux_desktop
 ```
