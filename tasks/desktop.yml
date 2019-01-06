@@ -44,7 +44,7 @@
        owner: "{{ username }}"
       when: not item.stat.exists
       with_items:
-      - "{{folder_stats.results}}"
+      - "{{ folder_stats.results }}"
 
 - name: Linux Desktop | Interface | Copy launcher files
   copy:
