@@ -47,3 +47,7 @@ This role is meant to be run in a **Debian Linux** system.
   roles:
     - opsxcq.linux_desktop
 ```
+
+# List of other things to install
+
+ - [Firefox Extension to use pass](https://addons.mozilla.org/en-US/firefox/addon/passff/)
