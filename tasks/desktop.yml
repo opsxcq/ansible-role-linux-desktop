@@ -12,6 +12,7 @@
       - i3lock
       - fonts-font-awesome
       - fontconfig
+      - flatpak
 
 - name: Linux Desktop | Interface | Install Adapta GTK theme dependencies
   apt:
