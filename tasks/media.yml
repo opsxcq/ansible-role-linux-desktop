@@ -1,6 +1,7 @@
 # Media related configs
 
 - name: Linux Desktop | Media | Install media player features
+  become: yes
   apt:
     state: present
     name:

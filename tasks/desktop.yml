@@ -1,6 +1,7 @@
 # Install the desktop environment
 
 - name: Linux Desktop | Interface | Install desktop tools
+  become: yes
   apt:
     state: present
     name:
@@ -15,6 +16,7 @@
       - flatpak
 
 - name: Linux Desktop | Interface | Install Adapta GTK theme dependencies
+  become: yes
   apt:
     state: present
     name:

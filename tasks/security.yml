@@ -1,6 +1,7 @@
 # Security tools
 
 - name: Linux Desktop | Install security tools
+  become: yes
   apt:
     state: present
     name:

@@ -1,6 +1,7 @@
 # Text processing tools
 
 - name: Linux Desktop | Install text processing tools
+  become: yes
   apt:
     state: present
     name:

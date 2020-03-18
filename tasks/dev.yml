@@ -1,11 +1,13 @@
 # Development environment setup
 
 - name: Linux Desktop | Dev | Install Yarn key
+  become: yes
   apt_key:
     url: https://dl.yarnpkg.com/debian/pubkey.gpg
     state: present
 
 - name: Linux Desktop | Dev | Install Yarn repository
+  become: yes
   file:
     path: /etc/apt/sources.list.d/yarn.list
     owner: root
@@ -13,6 +15,7 @@
     state: touch
 
 - name: Linux Desktop | Dev | Install Yarn repository
+  become: yes
   lineinfile:
     dest: /etc/apt/sources.list.d/yarn.list
     regexp: "deb http://dl.yarnpkg.com/debian/ stable main"
@@ -20,10 +23,12 @@
     state: present
 
 - name: Linux Desktop | Dev | Update apt cache
+  become: yes
   apt:
     update_cache: yes
 
 - name: Linux Desktop | Dev | Install the desktop environment for programming
+  become: yes
   apt:
     state: present
     name:
@@ -41,7 +46,7 @@
     repo: https://github.com/syl20bnr/spacemacs
     dest: ~/.emacs.d/
     update: yes
-    clone: no
+    clone: yes
     accept_hostkey: yes
 
 - name: Linux Desktop | Dev | Configure git

@@ -1,6 +1,7 @@
 # Terminal tools
 
 - name: Linux Desktop | Terminal | Install tools
+  become: yes
   apt:
     state: present
     name:
