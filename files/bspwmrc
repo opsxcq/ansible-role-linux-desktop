@@ -6,6 +6,7 @@ sxhkd &
 
 # Add steroids and cocaine to my keyboard
 xset r rate 300 50
+setxkbmap -option caps:swapescape
 
 # Reload polybar
 pkill polybar
