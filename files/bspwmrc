@@ -4,6 +4,9 @@
 pkill sxhkd
 sxhkd &
 
+# Add steroids and cocaine to my keyboard
+xset r rate 300 50
+
 # Reload polybar
 pkill polybar
 polybar -c ~/.config/polybar/config top &
