@@ -92,14 +92,6 @@
     group: "{{ username }}"
     owner: "{{ username }}"
 
-- name: Linux Desktop | Interface | Copy elfeed configuration
-  copy:
-    src: "elfeed.org"
-    dest: "/home/{{ username }}/elfeed.org"
-    mode: 0700
-    group: "{{ username }}"
-    owner: "{{ username }}"
-
 - name: Linux Desktop | Interface | Install lockscreen script
   copy:
     src: "lock"
