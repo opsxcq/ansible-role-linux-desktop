@@ -14,6 +14,7 @@
       - fonts-font-awesome
       - fontconfig
       - flatpak
+      - redshift
 
 - name: Linux Desktop | Interface | Install Adapta GTK theme dependencies
   become: yes
