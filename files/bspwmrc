@@ -28,7 +28,7 @@ xsetroot -cursor_name left_ptr
 
 # Init the color temperature management
 redshift -l 50.4501:30.5234 &
-.bin/eclipse/eclipse/eclipse &
+#.bin/eclipse/eclipse/eclipse &
 emacsclient -c &
 
 # Let the important things running with some priority
