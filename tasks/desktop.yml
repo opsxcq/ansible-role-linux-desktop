@@ -15,6 +15,7 @@
       - fontconfig
       - flatpak
       - redshift
+      - ranger
 
 - name: Linux Desktop | Interface | Install Adapta GTK theme dependencies
   become: yes
